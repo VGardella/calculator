@@ -3,8 +3,8 @@
     width: 500px;
     height: 600px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
 }
 
 #screen{
@@ -12,7 +12,13 @@
     grid-row: 1;
     grid-column: 1 / span 4;
     margin: 20px;
-    height: 50px;
+    height: 80px;
+}
+
+#buttons{
+    display: grid;
+    gap: 20px;
+    padding: 20px;
 }
 
 .number1,
@@ -20,8 +26,26 @@
 .number3,
 .number4{
     border: 1px solid black;
-    width: 40px;
-    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.number1{
+    grid-column: 1;
+}
+
+.number2{
+    grid-column: 2;
+}
+
+.number3{
+    grid-column: 3;
+}
+
+.number4{
+    grid-column: 4;
 }
 /*
 
