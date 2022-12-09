@@ -5,7 +5,7 @@ function add() {
     for (let i = 0; i < arguments.length; i++) {
         sum += arguments[i];
     };
-    return sum;
+    console.log(sum);
 }
 
 function substract() {
@@ -13,22 +13,39 @@ function substract() {
     for (let i = 1; i < arguments.length; i++) {
         rest -= arguments[i]
     };
-    return rest;
+    console.log(rest);
 }
 
 function multiply() {
     let multip = 1;
-    for (let i = 1; i < arguments.length; i++) {
+    for (let i = 0; i < arguments.length; i++) {
         multip *= arguments[i];
     };
-    return multip;
+    console.log(multip);
 }
 
 function divide(dividend, divisor) {
-    return divisor/dividend;
+    console.log(dividend/divisor);
 }
 
-console.log(add(4,5,6,7));
-console.log(substract(10,6,5));
-console.log(multiply(2,3,4));
-console.log(divide(10,3));
+// functionality
+
+function operate() {
+    const num1 = Number(prompt('First number:'));
+    const operator = prompt('Operation:');
+    const num2 = Number(prompt('Second number:'));
+    if (operator === '+') {
+        return add(num1, num2);
+    }
+    else if (operator === '-') {
+        return substract(num1, num2);
+    }
+    else if (operator === '*') {
+        return multiply(num1, num2);
+    }
+    else if (operator === '/') {
+        return divide(num1, num2);
+    }
+}
+
+operate();
