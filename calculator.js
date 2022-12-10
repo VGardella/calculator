@@ -71,21 +71,20 @@ function getSecondNumber(event) {
 // calculator functionality
 
 function operateCalculator(event) {
-    if (result === 0) {
-        if (operator === '+') {
-            add(number1, number2);
-        }
-        else if (operator === '-') {
-            substract(number1, number2);
-        }
-        else if (operator === '*') {
-            multiply(number1, number2);
-        }
-        else if (operator === '/') {
-            divide(number1, number2);
-        }
-        screen.textContent = result;
+    if (operator === '+') {
+        add(number1, number2);
     }
+    else if (operator === '-') {
+        substract(number1, number2);
+    }
+    else if (operator === '*') {
+        multiply(number1, number2);
+    }
+    else if (operator === '/') {
+        divide(number1, number2);
+    }
+    screen.textContent = result;
+    displayValue = result;
 }
 
 function deleteMemory(event) {
