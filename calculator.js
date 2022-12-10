@@ -28,24 +28,47 @@ function divide(dividend, divisor) {
     console.log(dividend/divisor);
 }
 
-// functionality
+// display
 
-function operate() {
-    // const num1 = Number(prompt('First number:'));
-    // const operator = prompt('Operation:');
-    // const num2 = Number(prompt('Second number:'));
-    if (operator === '+') {
-        return add(num1, num2);
-    }
-    else if (operator === '-') {
-        return substract(num1, num2);
-    }
-    else if (operator === '*') {
-        return multiply(num1, num2);
-    }
-    else if (operator === '/') {
-        return divide(num1, num2);
+const getButtonContent = function(event) {
+    let textContent = this.textContent;
+    displayValue += textContent;
+    if (displayValue.length <= 12) {
+        screen.textContent = displayValue;
+    } 
+    else if (displayValue > 12) {
+        slicedDisplayValue = displayValue.slice(-12);
+        screen.textContent = slicedDisplayValue;
+        console.log(displayValue);
     }
 }
 
-operate();
+
+
+const buttons = document.querySelectorAll('.button');
+const screen = document.getElementById('screen');
+let displayValue = '';
+let slicedDisplayValue = '';
+buttons.forEach((button) => button.addEventListener('click', getButtonContent));
+
+// functionality
+
+// function operate() {
+//     const num1 = Number(prompt('First number:'));
+//     const operator = prompt('Operation:');
+//     const num2 = Number(prompt('Second number:'));
+//     if (operator === '+') {
+//         return add(num1, num2);
+//     }
+//     else if (operator === '-') {
+//         return substract(num1, num2);
+//     }
+//     else if (operator === '*') {
+//         return multiply(num1, num2);
+//     }
+//     else if (operator === '/') {
+//         return divide(num1, num2);
+//     }
+// }
+
+// operate();
