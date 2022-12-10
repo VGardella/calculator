@@ -1,11 +1,16 @@
 // variables
 
 const buttons = document.querySelectorAll('.button');
+const operators = document.querySelectorAll('.operator');
+const numbers = document.querySelectorAll('.number');
+const equals = document.querySelector('.equals');
 const screen = document.getElementById('screen');
 let displayValue = '';
 let slicedDisplayValue = '';
+let number = 0;
+let number2 = 0;
 
-// functions
+// mathematical functions
 
 function add() {
     let sum = 0;
