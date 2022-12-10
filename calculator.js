@@ -31,9 +31,9 @@ function divide(dividend, divisor) {
 // functionality
 
 function operate() {
-    const num1 = Number(prompt('First number:'));
-    const operator = prompt('Operation:');
-    const num2 = Number(prompt('Second number:'));
+    // const num1 = Number(prompt('First number:'));
+    // const operator = prompt('Operation:');
+    // const num2 = Number(prompt('Second number:'));
     if (operator === '+') {
         return add(num1, num2);
     }
