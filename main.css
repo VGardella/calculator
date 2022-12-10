@@ -45,7 +45,8 @@ h1{
 }
 
 .number:hover,
-.operator:hover{
+.operator:hover,
+.equals:hover{
     cursor: pointer;
 }
 
