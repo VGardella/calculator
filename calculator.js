@@ -5,6 +5,7 @@ const operators = document.querySelectorAll('.operator');
 const numbers = document.querySelectorAll('.number');
 const equals = document.querySelector('.equals');
 const screen = document.getElementById('screen');
+const clear = document.querySelector('.clear');
 let displayValue = '';
 let slicedDisplayValue = '';
 let number1 = 0;
@@ -17,12 +18,11 @@ let result = 0;
 
 function add(num1, num2) {
     result = num1 + num2;
-    return result;
 }
 
 function substract(num1, num2) {
     result = num1 - num2;
-    return rest;
+    return result;
 }
 
 function multiply(num1, num2) {
@@ -37,7 +37,7 @@ function divide(dividend, divisor) {
 
 // display
 
-const getButtonContent = function(event) {
+function getButtonContent(event) {
     let textContent = this.textContent;
     displayValue += textContent;
     if (displayValue.length <= 12) {
@@ -52,42 +52,52 @@ const getButtonContent = function(event) {
 
 // input manipulation
 
-const getFirstNumber = function(event) {
+function getFirstNumber(event) {
     temp = displayValue;
     number1 = Number(temp.slice(0, -1));
     console.log(number1);
 }
 
-const getOperator = function(event) {
+function getOperator(event) {
     operator = this.textContent;
     console.log(operator);
 }
 
-const getSecondNumber = function(event) {
+function getSecondNumber(event) {
     number2 = Number(displayValue.replace(temp, '').slice(0, -1));
     console.log(number2);
 }
 
 // calculator functionality
 
-const operateCalculator = function(event) {
-    const num1 = Number(prompt('First number:'));
-    const operator = prompt('Operation:');
-    const num2 = Number(prompt('Second number:'));
-    if (operator === '+') {
-        return add(num1, num2);
-    }
-    else if (operator === '-') {
-        return substract(num1, num2);
-    }
-    else if (operator === '*') {
-        return multiply(num1, num2);
-    }
-    else if (operator === '/') {
-        return divide(num1, num2);
+function operateCalculator(event) {
+    if (result === 0) {
+        if (operator === '+') {
+            add(number1, number2);
+        }
+        else if (operator === '-') {
+            substract(number1, number2);
+        }
+        else if (operator === '*') {
+            multiply(number1, number2);
+        }
+        else if (operator === '/') {
+            divide(number1, number2);
+        }
+        screen.textContent = result;
     }
 }
 
+function deleteMemory(event) {
+    screen.textContent = '';
+    displayValue = '';
+    slicedDisplayValue = '';
+    number1 = 0;
+    number2 = 0;
+    temp = 0;
+    operator = 0;
+    result = 0;
+}
 
 // event listeners
 
@@ -95,3 +105,5 @@ buttons.forEach((button) => button.addEventListener('click', getButtonContent));
 operators.forEach((operator) => operator.addEventListener('click', getFirstNumber));
 operators.forEach((operator) => operator.addEventListener('click', getOperator)); // cant use this inside a function that is inside another.
 equals.addEventListener('click', getSecondNumber);
+equals.addEventListener('click', operateCalculator);
+clear.addEventListener('click', deleteMemory);
