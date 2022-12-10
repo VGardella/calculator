@@ -74,8 +74,27 @@ const getSecondNumber = function(event) {
     number2 = Number(displayValue.replace(temp, '').slice(0, -1));
     console.log(number2);
 }
-    
-// }
+
+// calculator functionality
+
+const operateCalculator = function(event) {
+    const num1 = Number(prompt('First number:'));
+    const operator = prompt('Operation:');
+    const num2 = Number(prompt('Second number:'));
+    if (operator === '+') {
+        return add(num1, num2);
+    }
+    else if (operator === '-') {
+        return substract(num1, num2);
+    }
+    else if (operator === '*') {
+        return multiply(num1, num2);
+    }
+    else if (operator === '/') {
+        return divide(num1, num2);
+    }
+}
+
 
 // event listeners
 
@@ -83,27 +102,3 @@ buttons.forEach((button) => button.addEventListener('click', getButtonContent));
 operators.forEach((operator) => operator.addEventListener('click', getFirstNumber));
 operators.forEach((operator) => operator.addEventListener('click', getOperator)); // cant use this inside a function that is inside another.
 equals.addEventListener('click', getSecondNumber);
-
-//equals.addEventListener('click', )
-
-// functionality
-
-// function operate() {
-//     const num1 = Number(prompt('First number:'));
-//     const operator = prompt('Operation:');
-//     const num2 = Number(prompt('Second number:'));
-//     if (operator === '+') {
-//         return add(num1, num2);
-//     }
-//     else if (operator === '-') {
-//         return substract(num1, num2);
-//     }
-//     else if (operator === '*') {
-//         return multiply(num1, num2);
-//     }
-//     else if (operator === '/') {
-//         return divide(num1, num2);
-//     }
-// }
-
-// operate();
