@@ -11,35 +11,28 @@ let number1 = 0;
 let number2 = 0;
 let temp = 0;
 let operator = 0;
+let result = 0;
 
 // mathematical functions
 
-function add() {
-    let sum = 0;
-    for (let i = 0; i < arguments.length; i++) {
-        sum += arguments[i];
-    };
-    console.log(sum);
+function add(num1, num2) {
+    result = num1 + num2;
+    return result;
 }
 
-function substract() {
-    let rest = arguments[0];
-    for (let i = 1; i < arguments.length; i++) {
-        rest -= arguments[i]
-    };
-    console.log(rest);
+function substract(num1, num2) {
+    result = num1 - num2;
+    return rest;
 }
 
-function multiply() {
-    let multip = 1;
-    for (let i = 0; i < arguments.length; i++) {
-        multip *= arguments[i];
-    };
-    console.log(multip);
+function multiply(num1, num2) {
+    result = num1*num2;
+    return result;
 }
 
 function divide(dividend, divisor) {
-    console.log(dividend/divisor);
+    result = dividend/divisor;
+    return result;
 }
 
 // display
