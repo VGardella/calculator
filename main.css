@@ -44,6 +44,11 @@ h1{
     padding: 20px 30px 30px 30px;
 }
 
+.number:hover,
+.operator:hover{
+    cursor: pointer;
+}
+
 .number1,
 .number2,
 .number3,
