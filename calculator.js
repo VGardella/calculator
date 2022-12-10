@@ -61,17 +61,19 @@ const getButtonContent = function(event) {
 
 const getFirstNumber = function(event) {
     temp = displayValue;
-    console.log(temp);
     number1 = Number(temp.slice(0, -1));
     console.log(number1);
 }
 
- const getOperator = function(event) {
+const getOperator = function(event) {
     operator = this.textContent;
     console.log(operator);
 }
 
-// const getSecondNumber = function(event) {
+const getSecondNumber = function(event) {
+    number2 = Number(displayValue.replace(temp, '').slice(0, -1));
+    console.log(number2);
+}
     
 // }
 
@@ -80,6 +82,7 @@ const getFirstNumber = function(event) {
 buttons.forEach((button) => button.addEventListener('click', getButtonContent));
 operators.forEach((operator) => operator.addEventListener('click', getFirstNumber));
 operators.forEach((operator) => operator.addEventListener('click', getOperator)); // cant use this inside a function that is inside another.
+equals.addEventListener('click', getSecondNumber);
 
 //equals.addEventListener('click', )
 
