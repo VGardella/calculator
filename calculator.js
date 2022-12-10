@@ -55,9 +55,20 @@ const getButtonContent = function(event) {
     }
 }
 
+// input manipulation
+
+const getFirstNumber = function(event) {
+    number1 = Number(displayValue.slice(0, -1));
+    console.log(number1);
+}
+
+
+
 // event listeners
 
 buttons.forEach((button) => button.addEventListener('click', getButtonContent));
+operators.forEach((operator) => operator.addEventListener('click', getFirstNumber));
+
 
 // functionality
 
