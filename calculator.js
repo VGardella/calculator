@@ -7,8 +7,10 @@ const equals = document.querySelector('.equals');
 const screen = document.getElementById('screen');
 let displayValue = '';
 let slicedDisplayValue = '';
-let number = 0;
+let number1 = 0;
 let number2 = 0;
+let temp = 0;
+let operator = 0;
 
 // mathematical functions
 
@@ -58,17 +60,28 @@ const getButtonContent = function(event) {
 // input manipulation
 
 const getFirstNumber = function(event) {
-    number1 = Number(displayValue.slice(0, -1));
+    temp = displayValue;
+    console.log(temp);
+    number1 = Number(temp.slice(0, -1));
     console.log(number1);
 }
 
+ const getOperator = function(event) {
+    operator = this.textContent;
+    console.log(operator);
+}
 
+// const getSecondNumber = function(event) {
+    
+// }
 
 // event listeners
 
 buttons.forEach((button) => button.addEventListener('click', getButtonContent));
 operators.forEach((operator) => operator.addEventListener('click', getFirstNumber));
+operators.forEach((operator) => operator.addEventListener('click', getOperator)); // cant use this inside a function that is inside another.
 
+//equals.addEventListener('click', )
 
 // functionality
 
