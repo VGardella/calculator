@@ -1,3 +1,10 @@
+// variables
+
+const buttons = document.querySelectorAll('.button');
+const screen = document.getElementById('screen');
+let displayValue = '';
+let slicedDisplayValue = '';
+
 // functions
 
 function add() {
@@ -43,12 +50,8 @@ const getButtonContent = function(event) {
     }
 }
 
+// event listeners
 
-
-const buttons = document.querySelectorAll('.button');
-const screen = document.getElementById('screen');
-let displayValue = '';
-let slicedDisplayValue = '';
 buttons.forEach((button) => button.addEventListener('click', getButtonContent));
 
 // functionality
