@@ -59,7 +59,13 @@ function getFirstNumber(event) {
 }
 
 function getOperator(event) {
-    operator = this.textContent;
+    if (number1 !== 0 && operator !== 0 && number2 !== 0) {
+        number1 = result;
+        operator = this.textContent
+    }
+    else {
+        operator = this.textContent;
+    }
     console.log(operator);
 }
 
